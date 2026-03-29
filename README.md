@@ -1,6 +1,9 @@
-# K-LENS (Klipper Logic-Enhanced Native Sight Macro Suite)
+# K-LENS
+### Klipper Logic-Enhanced Native Sight Macro Suite
 
-K-LENS is an advanced camera-control engine for the Klipper ecosystem. It is designed to bridge the gap between hardware-level camera configurations and dynamic environmental lighting conditions.
+K-LENS is an advanced camera-control engine for the Klipper ecosystem. It is designed to bridge the gap between hardware-level camera configurations and dynamic environmental lighting conditions. 
+
+This macro suite was born from a critical pain point in high-fidelity monitoring: the environmental volatility of the 3D printing space. K-LENS originates from the need to solve the disparity between high-glare daylight and high-contrast nocturnal conditions—factors that traditionally compromise time-lapse consistency and diagnostic clarity. By automating the transition between these lighting extremes, K-LENS ensures your camera-control remains optimized 24/7.
 
 ---
 
@@ -25,7 +28,7 @@ While K-LENS is built for universal Klipper compatibility, it is primarily archi
 ---
 
 ## Development Methodology
-This suite is a collaborative project utilizing human-driven architectural design and AI-assisted logic refinement. This hybrid approach ensures a lightweight footprint without sacrificing robust shell-integration and macro complexity.
+This suite is a collaborative project utilizing human-driven architectural design and AI-assisted camera-control logic refinement. This hybrid approach ensures a lightweight footprint without sacrificing robust shell-integration and macro complexity.
 
 ---
 
