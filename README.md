@@ -15,11 +15,13 @@ The K-LENS suite is currently undergoing active development and internal testing
 
 ---
 
-## Hardware Compatibility and Portability
-While K-LENS was originally architected and validated on the **Sovol SV08** (BTT-CB1 host), the project is committed to universal Klipper compatibility. 
+## Hardware Environment
+While K-LENS is built for universal Klipper compatibility, it is primarily architected and validated on a high-performance **Sovol SV08** "Showroom" build featuring:
 
-* **SV08 Optimized:** Pre-configured for the BTT-CB1 environment.
-* **Mainline Klipper:** Documentation and adaptation guides will be provided to ensure functionality across various Klipper-based platforms and camera hardware.
+* **Mainline Klipper:** Running the latest upstream Klipper firmware.
+* **Demon Suite Compatible:** Fully integrated with the Demon Macro ecosystem.
+* **Eddy-NG Logic:** Optimized for machines utilizing high-speed induction bed leveling.
+* **BTT-CB1 Host:** Developed for the BigTreeTech computing environment.
 
 ---
 
