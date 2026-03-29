@@ -6,4 +6,4 @@
 - Not recommended for production environments.
 - High-glare and Low-light profiles are currently being calibrated.
 
-*If you are looking for the stable release, please return to the [Main Branch](https://github.com/YOUR_USER/K-LENS).*
+*If you are looking for the stable release, please return to the [Main Branch](https://github.com/SpoolSamplesPrintCo/K-LENS).*
