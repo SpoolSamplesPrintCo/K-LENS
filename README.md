@@ -1,5 +1,4 @@
-# K-LENS
-### Klipper Logic-Enhanced Native Sight Macro Suite
+# K-LENS (Klipper Logic-Enhanced Native Sight Macro Suite)
 
 K-LENS is an advanced vision-control engine for the Klipper ecosystem. It is designed to bridge the gap between hardware-level camera configurations and dynamic environmental lighting conditions.
 
