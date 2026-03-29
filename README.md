@@ -1,39 +1,9 @@
-# K-LENS
-### Klipper Logic-Enhanced Native Sight Macro Suite
+# 🛠️ K-LENS Development Branch (BETA)
+**CAUTION:** This branch contains experimental camera-control logic for the Sovol SV08. 
 
-K-LENS is an advanced camera-control engine for the Klipper ecosystem. It is designed to bridge the gap between hardware-level camera configurations and dynamic environmental lighting conditions. 
+### Current Status: 
+- Internal Testing Phase
+- Not recommended for production environments.
+- High-glare and Low-light profiles are currently being calibrated.
 
-This macro suite was born from a critical pain point in high-fidelity monitoring: the environmental volatility of the 3D printing space. K-LENS originates from the need to solve the disparity between high-glare daylight and high-contrast nocturnal conditions—factors that traditionally compromise time-lapse consistency and diagnostic clarity. By automating the transition between these lighting extremes, K-LENS ensures your camera-control remains optimized 24/7.
-
----
-
-## Project Status: In Development
-The K-LENS suite is currently undergoing active development and internal testing. Core logic and safety protocols are being finalized prior to the 1.0.0-Beta release.
-
-### Core Systems Architecture
-* **Adaptive Light-Bias Engine:** Intelligent brightness compensation logic for fluctuating natural light.
-* **Manual Shutter Engine:** Fixed-exposure profiles for flicker-free monitoring under artificial lighting.
-* **Geographic Solar Sync:** Automated day/night engine switching based on local solar coordinates.
-
----
-
-## Hardware Environment
-While K-LENS is built for universal Klipper compatibility, it is primarily architected and validated on a high-performance **Sovol SV08** "Showroom" build featuring:
-
-* **Mainline Klipper:** Running the latest upstream Klipper firmware.
-* **Demon Suite Compatible:** Fully integrated with the Demon Macro ecosystem.
-* **Eddy-NG Logic:** Optimized for machines utilizing high-speed induction bed leveling.
-* **BTT-CB1 Host:** Developed for the BigTreeTech computing environment.
-
----
-
-## Development Methodology
-This suite is a collaborative project utilizing human-driven architectural design and AI-assisted camera-control logic refinement. This hybrid approach ensures a lightweight footprint without sacrificing robust shell-integration and macro complexity.
-
----
-
-## Licensing
-Licensed under the **MIT License**. This project is free to use, modify, and distribute, provided that original attribution is maintained.
-
----
-*Follow this repository for the official 1.0.0-Beta release.*
+*If you are looking for the stable release, please return to the [Main Branch](https://github.com/YOUR_USER/K-LENS).*
