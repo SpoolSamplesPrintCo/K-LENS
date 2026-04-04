@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# KLENS INSTALLER v0.11.4.4
+# KLENS INSTALLER v0.11.4.6
+# UI Restoration & Auto-Config Seed
 KLENS_DIR="$HOME/printer_data/config/klens"
 CONFIG_FILE="$KLENS_DIR/klens_config.ini"
 
@@ -23,10 +24,11 @@ sharpness = 3
 auto_exposure = 0
 auto_color = 1
 EOF
-    echo "✅ Config seeded with Beauty-First defaults."
+    echo "✅ Config seeded."
 fi
 
-[ -f "$KLENS_DIR/scripts/klens_engine.sh" ] && chmod +x "$KLENS_DIR/scripts/klens_engine.sh"
+# Ensure executable permissions
+chmod +x "$KLENS_DIR/scripts/klens_engine.sh"
 chmod +x "$KLENS_DIR/install.sh"
 
 echo "✅ KLENS Installation Successful!"
