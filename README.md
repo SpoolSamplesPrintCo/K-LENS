@@ -1,5 +1,5 @@
-# 📸 KLENS: K-Logic Enhanced Native Sight
-### Adaptive Vision-Control Engine Optimized for Sovol SV08
+# 📸 KLENS: Klipper Logic Enhanced Native Sight
+### Adaptive Vision-Control Engine Optimized for Sovol SV08 **on Mainline Klipper for now**
 **Developer:** J (@SpoolSamplesPrintCo) | **Assistant:** Gemini
 
 > [!WARNING]
