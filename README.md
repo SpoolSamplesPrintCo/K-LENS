@@ -1,9 +1,28 @@
-# 🛠️ K-LENS Development Branch (BETA)
-**CAUTION:** This branch contains experimental camera-control logic for the Sovol SV08. 
+# 📸 KLENS: K-Logic Enhanced Native Sight
+### Adaptive Vision-Control Engine Optimized for Sovol SV08
+**Developer:** J (@SpoolSamplesPrintCo) | **Assistant:** Gemini
 
-### Current Status: 
-- Internal Testing Phase
-- Not recommended for production environments.
-- High-glare and Low-light profiles are currently being calibrated.
+> [!WARNING]
+> **DEVELOPMENT BUILD (v0.11.4.0):** This branch contains active experiments. Expect frequent updates and potential breaking changes.
 
-*If you are looking for the stable release, please return to the [Main Branch](https://github.com/SpoolSamplesPrintCo/K-LENS).*
+---
+
+## 🚀 The Philosophy: "Beauty by Default"
+Standard Klipper camera setups often suffer from "Exposure Hunting," resulting in flickering timelapses and washed-out prints. **KLENS** treats your printer like a cinematic set.
+
+* **The Beauty Profile (Default):** A high-contrast, punchy cinematic look (**-280 Bias**) that makes the SV08 chamber look professional while idle or printing dark/colored materials.
+* **Hex-Hunter Automation:** The suite scans your G-code filename. If it detects a White Filament Hex Code (`#FFFFFF`), it automatically drops the exposure to **-400 Bias** to preserve fine model detail.
+
+## 🛠 Compatibility & Requirements
+* **Hardware:** Optimized for **Sovol SV08** (Internal USB Camera).
+* **Host:** BTT-CB1 / Raspberry Pi (Debian-based).
+* **Software:** Klipper with `gcode_shell_command` installed via [KIAUH](https://github.com/dw-0/kiauh).
+
+---
+
+## 📥 Installation
+1. **SSH into your printer.**
+2. **Navigate to config and clone:**
+   ```bash
+   cd ~/printer_data/config
+   git clone -b development [https://github.com/SpoolSamplesPrintCo/klens.git](https://github.com/SpoolSamplesPrintCo/klens.git)
