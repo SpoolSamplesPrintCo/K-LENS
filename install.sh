@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# KLENS INSTALLER v0.11.4.8
+# KLENS INSTALLER v0.11.4.10
+# Repo: SpoolSamplesPrintCo/klens
 KLENS_DIR="$HOME/printer_data/config/klens"
 CONFIG_FILE="$KLENS_DIR/klens_config.ini"
 
@@ -8,6 +9,7 @@ echo "🚀 Starting KLENS Automated Installation..."
 
 mkdir -p "$KLENS_DIR/scripts"
 
+# Seed config if missing
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "📄 Seeding default klens_config.ini..."
     cat <<EOF > "$CONFIG_FILE"
@@ -25,6 +27,7 @@ auto_color = 1
 EOF
 fi
 
+# Lockdown permissions
 chmod +x "$KLENS_DIR/scripts/klens_engine.sh"
 chmod +x "$KLENS_DIR/install.sh"
 
