@@ -10,12 +10,11 @@ clamp() {
   else echo "$val"; fi
 }
 
-# --- 1. PARAMETER PROCESSING ---
 if [ ! -z "$1" ] && [ ! -z "$2" ]; then
     CURRENT_VAL=$(grep "^$1 =" $CONF_FILE | cut -d'=' -f2 | tr -d '[:space:]')
     if [[ "$1" == "mode" ]]; then NEW_VAL=$2
-    elif [[ "$2" == "ADD" ]]; then NEW_VAL=$(expr ${CURRENT_VAL:-0} + ${3:-0}); sed -i "s/^mode = .*/mode = MANUAL/" $CONF_FILE
-    elif [[ "$2" == "SUB" ]]; then NEW_VAL=$(expr ${CURRENT_VAL:-0} - ${3:-0}); sed -i "s/^mode = .*/mode = MANUAL/" $CONF_FILE
+    elif [[ "$2" == "ADD" ]]; then NEW_VAL=$(expr ${CURRENT_VAL:-0} + ${3:-0})
+    elif [[ "$2" == "SUB" ]]; then NEW_VAL=$(expr ${CURRENT_VAL:-0} - ${3:-0})
     else NEW_VAL=$2; fi
 
     case "$1" in
@@ -28,7 +27,6 @@ if [ ! -z "$1" ] && [ ! -z "$2" ]; then
     sed -i "s/^$1 = .*/$1 = $NEW_VAL/" $CONF_FILE
 fi
 
-# --- 2. EXECUTION LOGIC ---
 get_v() { grep "^$1 =" $CONF_FILE | cut -d'=' -f2 | tr -d '[:space:]'; }
 MODE=$(get_v mode)
 
@@ -44,7 +42,6 @@ BRT=$(get_v brightness); A_WB=$(get_v auto_wb); A_HUE=$(get_v auto_hue); A_SAT=$
 TARGET_EXP=$(expr $BASE_EXP + ${BIAS:-0})
 [ "$TARGET_EXP" -lt 1 ] && TARGET_EXP=1
 
-# Apply Manual Exposure/Gain/Bright/Contrast/Sharp (The "Hybrid" Core)
 v4l2-ctl -d /dev/video0 \
   --set-ctrl=auto_exposure=1 \
   --set-ctrl=exposure_time_absolute=$TARGET_EXP \
@@ -53,15 +50,11 @@ v4l2-ctl -d /dev/video0 \
   --set-ctrl=contrast=$CON \
   --set-ctrl=sharpness=$SHP
 
-# Apply Color Controls (Manual only if Auto is OFF)
 v4l2-ctl -d /dev/video0 --set-ctrl=white_balance_automatic=$A_WB
 [ "$A_WB" -eq 0 ] && v4l2-ctl -d /dev/video0 --set-ctrl=white_balance_temperature=$WB 2>/dev/null
-
 [ "$A_SAT" -eq 0 ] && v4l2-ctl -d /dev/video0 --set-ctrl=saturation=$SAT
 [ "$A_HUE" -eq 0 ] && v4l2-ctl -d /dev/video0 --set-ctrl=hue=$HUE
 
 echo "--- K-LENS CALIBRATION REPORT ---"
 echo "Exp: Total=$TARGET_EXP (Bias:$BIAS) | Mode=$MODE"
-echo "Auto-Color: WB=$A_WB | Hue=$A_HUE | Sat=$A_SAT"
 echo "Quality: Gain=$GAIN | Bright=$BRT | Contrast=$CON | Sharp=$SHP"
-echo "---------------------------------"
